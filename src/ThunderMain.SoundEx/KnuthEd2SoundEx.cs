@@ -55,10 +55,7 @@ namespace ThunderMain.SoundEx
                 }
 
                 // Pad with zeros
-                for (int i = output.Length; i < 4; i++)
-                {
-                    output.Append("0");
-                }
+                output.Append(new string('0', 4 - output.Length));
             }
 
             return output.ToString();

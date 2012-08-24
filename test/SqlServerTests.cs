@@ -16,5 +16,11 @@ namespace ThunderMain.SoundEx.Test
             Assert.Equal("V532", SoundEx.SqlServer.GenerateSoundEx("VanDeusen"));
             Assert.Equal("D250", SoundEx.SqlServer.GenerateSoundEx("Deusen"));
         }
+
+        [Fact]
+        public void EmptyInputReturnsZeroLengthSoundEx()
+        {
+            Assert.Equal(string.Empty, SoundEx.SqlServer.GenerateSoundEx(string.Empty));
+        }
     }
 }

@@ -17,5 +17,11 @@ namespace ThunderMain.SoundEx.Test
             Assert.Equal("V532", SoundEx.Miracode.GenerateSoundEx("VanDeusen"));
             Assert.Equal("D250", SoundEx.Miracode.GenerateSoundEx("Deusen"));
         }
+
+        [Fact]
+        public void EmptyInputReturnsZeroLengthSoundEx()
+        {
+            Assert.Equal(string.Empty, SoundEx.Miracode.GenerateSoundEx(string.Empty));
+        }
     }
 }

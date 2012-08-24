@@ -22,5 +22,11 @@ namespace ThunderMain.SoundEx.Test
             Assert.Equal("L222", SoundEx.Simplified.GenerateSoundEx("Lukasiewicz"));
             Assert.Equal("L222", SoundEx.Simplified.GenerateSoundEx("Lissajous"));
         }
+
+        [Fact]
+        public void EmptyInputReturnsZeroLengthSoundEx()
+        {
+            Assert.Equal(string.Empty, SoundEx.Simplified.GenerateSoundEx(string.Empty));
+        }
     }
 }

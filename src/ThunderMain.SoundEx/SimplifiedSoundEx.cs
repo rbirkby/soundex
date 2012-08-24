@@ -12,27 +12,29 @@ namespace ThunderMain.SoundEx
     {
         public override string GenerateSoundEx(string s)
         {
+            if (s.Length == 0)
+            {
+                return string.Empty;
+            }
+
             var output = new StringBuilder();
 
-            if (s.Length > 0)
+            output.Append(char.ToUpperInvariant(s[0]));
+
+            // Stop at a maximum of 4 characters
+            for (int i = 1; i < s.Length && output.Length < 4; i++)
             {
-                output.Append(char.ToUpperInvariant(s[0]));
+                string c = EncodeChar(s[i]);
 
-                // Stop at a maximum of 4 characters
-                for (int i = 1; i < s.Length && output.Length < 4; i++)
+                // Ignore duplicated chars
+                if (c != EncodeChar(s[i - 1]))
                 {
-                    string c = EncodeChar(s[i]);
-
-                    // Ignore duplicated chars
-                    if (c != EncodeChar(s[i - 1]))
-                    {
-                        output.Append(c);
-                    }
+                    output.Append(c);
                 }
-
-                // Pad with zeros
-                output.Append(new string('0', 4 - output.Length));
             }
+
+            // Pad with zeros
+            output.Append(new string('0', 4 - output.Length));
 
             return output.ToString();
         }

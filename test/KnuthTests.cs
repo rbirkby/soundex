@@ -24,5 +24,11 @@ namespace ThunderMain.SoundEx.Test
             // Added in second edition of TAOCP for the h-w grouping rule
             Assert.Equal("W200", SoundEx.KnuthEd2.GenerateSoundEx("Wachs"));
         }
+
+        [Fact]
+        public void EmptyInputReturnsZeroLengthSoundEx()
+        {
+            Assert.Equal(string.Empty, SoundEx.KnuthEd2.GenerateSoundEx(string.Empty));
+        }
     }
 }

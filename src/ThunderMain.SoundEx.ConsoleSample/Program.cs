@@ -4,7 +4,7 @@ using System.IO.Compression;
 
 namespace ThunderMain.SoundEx.ConsoleSample
 {
-    class UnitTest
+    static class Program
     {
         static void Main()
         {

@@ -16,9 +16,9 @@ namespace ThunderMain.SoundEx.ConsoleSample
         // The names are sorted to allow efficient lookup
         private readonly StringDictionary _allWords = new StringDictionary();
 
-        private readonly SoundExBase _soundExStrategy;
+        private readonly SoundEx _soundExStrategy;
 
-        public CustomDictionary(SoundExBase soundEx)
+        public CustomDictionary(SoundEx soundEx)
         {
             _soundExStrategy = soundEx;
         }

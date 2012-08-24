@@ -9,15 +9,13 @@ namespace ThunderMain.SoundEx.Test
         {
             // Validate the SoundEx agorithm
             // using http://www.nara.gov/genealogy/soundex/soundex.html
-            var soundex = new MiracodeSoundEx();
-
-            Assert.Equal("T522", soundex.GenerateSoundEx("Tymczak"));
-            Assert.Equal("A261", soundex.GenerateSoundEx("Ashcraft"));
-            Assert.Equal("P236", soundex.GenerateSoundEx("Pfister"));
-            Assert.Equal("J250", soundex.GenerateSoundEx("Jackson"));
-            Assert.Equal("G362", soundex.GenerateSoundEx("Gutierrez"));
-            Assert.Equal("V532", soundex.GenerateSoundEx("VanDeusen"));
-            Assert.Equal("D250", soundex.GenerateSoundEx("Deusen"));
+            Assert.Equal("T522", SoundEx.Miracode.GenerateSoundEx("Tymczak"));
+            Assert.Equal("A261", SoundEx.Miracode.GenerateSoundEx("Ashcraft"));
+            Assert.Equal("P236", SoundEx.Miracode.GenerateSoundEx("Pfister"));
+            Assert.Equal("J250", SoundEx.Miracode.GenerateSoundEx("Jackson"));
+            Assert.Equal("G362", SoundEx.Miracode.GenerateSoundEx("Gutierrez"));
+            Assert.Equal("V532", SoundEx.Miracode.GenerateSoundEx("VanDeusen"));
+            Assert.Equal("D250", SoundEx.Miracode.GenerateSoundEx("Deusen"));
         }
     }
 }

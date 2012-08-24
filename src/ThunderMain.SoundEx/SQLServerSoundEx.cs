@@ -9,7 +9,7 @@ namespace ThunderMain.SoundEx
     /// For example, SQL Server will encode "PPPP" as "P100", whereas Miracode will
     /// encode it as "P000".
     /// </summary>
-    public class SqlServerSoundEx : SoundExBase
+    internal class SqlServerSoundEx : SoundEx
     {
         public override string GenerateSoundEx(string s)
         {

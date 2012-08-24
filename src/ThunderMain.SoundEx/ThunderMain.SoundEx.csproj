@@ -39,11 +39,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SoundExBase.cs" />
     <Compile Include="KnuthEd2SoundEx.cs" />
     <Compile Include="MiracodeSoundEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplifiedSoundEx.cs" />
+    <Compile Include="SoundEx.cs" />
     <Compile Include="SQLServerSoundEx.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

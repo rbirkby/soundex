@@ -7,7 +7,7 @@ namespace ThunderMain.SoundEx
     /// to http://www.nara.gov/genealogy/soundex/soundex.html
     /// Miracode was first used with the 1910 US census
     /// </summary>
-    public class MiracodeSoundEx : SoundExBase
+    internal class MiracodeSoundEx : SoundEx
     {
         public override string GenerateSoundEx(string s)
         {

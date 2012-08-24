@@ -7,8 +7,17 @@ namespace ThunderMain.SoundEx
     /// Could also be used for other phonetic matching algorithms
     /// such as "Metaphone"/"Metaphon".
     /// </summary>
-    public abstract class SoundExBase
+    public abstract class SoundEx
     {
+        /// <summary>American SoundEx or Miracode algorithm.</summary>
+        public static readonly SoundEx Miracode = new MiracodeSoundEx();
+        /// <summary>Simplified SoundEx from Knuth vol3 Edition 1.</summary>
+        public static readonly SoundEx Simplified = new SimplifiedSoundEx();
+        /// <summary>Knuth TAOCP Vol3 Edition 2.</summary>
+        public static readonly SoundEx KnuthEd2 = new KnuthEd2SoundEx();
+        /// <summary>SQL Server Soundex implementation.</summary>
+        public static readonly SoundEx SqlServer = new SqlServerSoundEx();
+
         public abstract string GenerateSoundEx(string s);
 
         /// <summary>
@@ -23,7 +32,7 @@ namespace ThunderMain.SoundEx
         }
 
         /// <summary>
-        /// Marked as virtual so that concrete SoundExBase implementations can
+        /// Marked as virtual so that concrete SoundEx implementations can
         /// replace this and add extra characters for encoding.
         /// For example, the Online Dictionary of Computings specifies
         /// several extra characters in the lookup table.

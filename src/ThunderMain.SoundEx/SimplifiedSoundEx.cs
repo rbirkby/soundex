@@ -8,7 +8,7 @@ namespace ThunderMain.SoundEx
     /// 
     /// It was used for the 1880 and 1900 census
     /// </summary>
-    public class SimplifiedSoundEx : SoundExBase
+    internal class SimplifiedSoundEx : SoundEx
     {
         public override string GenerateSoundEx(string s)
         {

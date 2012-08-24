@@ -9,20 +9,18 @@ namespace ThunderMain.SoundEx.Test
         {
             // Validate the SoundEx agorithm
             // using Knuth TAOCP volume 3
-            var soundex = new SimplifiedSoundEx();
-
-            Assert.Equal("E460", soundex.GenerateSoundEx("Euler"));
-            Assert.Equal("E460", soundex.GenerateSoundEx("Ellery"));
-            Assert.Equal("G200", soundex.GenerateSoundEx("Gauss"));
-            Assert.Equal("G200", soundex.GenerateSoundEx("Ghosh"));
-            Assert.Equal("H416", soundex.GenerateSoundEx("Hilbert"));
-            Assert.Equal("H416", soundex.GenerateSoundEx("Heilbronn"));
-            Assert.Equal("K530", soundex.GenerateSoundEx("Knuth"));
-            Assert.Equal("K530", soundex.GenerateSoundEx("Kant"));
-            Assert.Equal("L300", soundex.GenerateSoundEx("Lloyd"));
-            Assert.Equal("L300", soundex.GenerateSoundEx("Ladd"));
-            Assert.Equal("L222", soundex.GenerateSoundEx("Lukasiewicz"));
-            Assert.Equal("L222", soundex.GenerateSoundEx("Lissajous"));
+            Assert.Equal("E460", SoundEx.Simplified.GenerateSoundEx("Euler"));
+            Assert.Equal("E460", SoundEx.Simplified.GenerateSoundEx("Ellery"));
+            Assert.Equal("G200", SoundEx.Simplified.GenerateSoundEx("Gauss"));
+            Assert.Equal("G200", SoundEx.Simplified.GenerateSoundEx("Ghosh"));
+            Assert.Equal("H416", SoundEx.Simplified.GenerateSoundEx("Hilbert"));
+            Assert.Equal("H416", SoundEx.Simplified.GenerateSoundEx("Heilbronn"));
+            Assert.Equal("K530", SoundEx.Simplified.GenerateSoundEx("Knuth"));
+            Assert.Equal("K530", SoundEx.Simplified.GenerateSoundEx("Kant"));
+            Assert.Equal("L300", SoundEx.Simplified.GenerateSoundEx("Lloyd"));
+            Assert.Equal("L300", SoundEx.Simplified.GenerateSoundEx("Ladd"));
+            Assert.Equal("L222", SoundEx.Simplified.GenerateSoundEx("Lukasiewicz"));
+            Assert.Equal("L222", SoundEx.Simplified.GenerateSoundEx("Lissajous"));
         }
     }
 }

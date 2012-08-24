@@ -5,7 +5,7 @@ namespace ThunderMain.SoundEx
     /// <summary>
     /// This SoundEx is described in Knuth TAOCP Vol3 Edition 2, pg 394-395
     /// </summary>
-    public class KnuthEd2SoundEx : SoundExBase
+    internal class KnuthEd2SoundEx : SoundEx
     {
         public override string GenerateSoundEx(string s)
         {

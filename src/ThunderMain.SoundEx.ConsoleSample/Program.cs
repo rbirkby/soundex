@@ -18,16 +18,16 @@ namespace ThunderMain.SoundEx.ConsoleSample
                 switch (Console.ReadLine().ToUpperInvariant())
                 {
                     case "M":
-                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundExEnum.Miracode);
+                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundEx.Miracode);
                         break;
                     case "S":
-                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundExEnum.Simplified);
+                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundEx.Simplified);
                         break;
                     case "K":
-                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundExEnum.KnuthEd2);
+                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundEx.KnuthEd2);
                         break;
                     case "T":
-                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundExEnum.SqlServer);
+                        util = SoundExDictionary.CreateCustomDictionary(stream, SoundEx.SqlServer);
                         break;
                     default:
                         Console.WriteLine("Unknown type");

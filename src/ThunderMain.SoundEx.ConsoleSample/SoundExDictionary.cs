@@ -4,38 +4,17 @@ using System.IO;
 
 namespace ThunderMain.SoundEx.ConsoleSample
 {
-    public enum SoundExEnum { Miracode, Simplified, KnuthEd2, SqlServer };
-
     public abstract class SoundExDictionary
     {
         /// <summary>
         /// Factory method for creating a SoundEx dictonary using any of the
-        /// SoundExBase implementations available
+        /// SoundEx implementations available
         /// </summary>
         /// <param name="stream">The stream.</param>
-        /// <param name="type">The type of soundex algorithm.</param>
+        /// <param name="soundex">The type of soundex algorithm.</param>
         /// <returns></returns>
-        public static SoundExDictionary CreateCustomDictionary(Stream stream, SoundExEnum type)
+        public static SoundExDictionary CreateCustomDictionary(Stream stream, SoundEx soundex)
         {
-            SoundExBase soundex;
-
-            switch (type)
-            {
-                case SoundExEnum.Simplified:
-                    soundex = new SimplifiedSoundEx();
-                    break;
-                case SoundExEnum.KnuthEd2:
-                    soundex = new KnuthEd2SoundEx();
-                    break;
-                case SoundExEnum.SqlServer:
-                    soundex = new SqlServerSoundEx();
-                    break;
-                case SoundExEnum.Miracode:
-                default:
-                    soundex = new MiracodeSoundEx();
-                    break;
-            }
-
             var custom = new CustomDictionary(soundex);
             var reader = new StreamReader(stream);
 

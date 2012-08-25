@@ -2,12 +2,14 @@
 
 namespace ThunderMain.SoundEx.Test
 {
+    /// <summary>
+    /// Tests for the SQL Server soundex variant.
+    /// </summary>
     public class SqlServerTests
     {
         [Fact]
         public void TestSqlServer()
         {
-            // Validate the SoundEx agorithm
             Assert.Equal("T522", SoundEx.SqlServer.GenerateSoundEx("Tymczak"));
             Assert.Equal("A226", SoundEx.SqlServer.GenerateSoundEx("Ashcraft"));
             Assert.Equal("P123", SoundEx.SqlServer.GenerateSoundEx("Pfister"));

@@ -2,13 +2,14 @@
 
 namespace ThunderMain.SoundEx.Test
 {
+    /// <summary>
+    /// Validate the SoundEx algorithm using Knuth TAOCP volume 3.
+    /// </summary>
     public class SimplifiedTests
     {
         [Fact]
         public void TestSimplified()
         {
-            // Validate the SoundEx agorithm
-            // using Knuth TAOCP volume 3
             Assert.Equal("E460", SoundEx.Simplified.GenerateSoundEx("Euler"));
             Assert.Equal("E460", SoundEx.Simplified.GenerateSoundEx("Ellery"));
             Assert.Equal("G200", SoundEx.Simplified.GenerateSoundEx("Gauss"));

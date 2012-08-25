@@ -49,6 +49,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="OracleTests.cs" />
     <Compile Include="KnuthTests.cs" />
     <Compile Include="MiracodeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

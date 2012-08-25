@@ -2,13 +2,14 @@
 
 namespace ThunderMain.SoundEx.Test
 {
+    /// <summary>
+    /// Validate the SoundEx agorithm using Knuth TAOCP volume 3.
+    /// </summary>
     public class KnuthTests
     {
         [Fact]
         public void TestKnuth()
         {
-            // Validate the SoundEx agorithm
-            // using Knuth TAOCP volume 3
             Assert.Equal("E460", SoundEx.KnuthEd2.GenerateSoundEx("Euler"));
             Assert.Equal("E460", SoundEx.KnuthEd2.GenerateSoundEx("Ellery"));
             Assert.Equal("G200", SoundEx.KnuthEd2.GenerateSoundEx("Gauss"));

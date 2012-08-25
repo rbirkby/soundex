@@ -17,6 +17,8 @@ namespace ThunderMain.SoundEx
         public static readonly SoundEx KnuthEd2 = new KnuthEd2SoundEx();
         /// <summary>SQL Server Soundex implementation.</summary>
         public static readonly SoundEx SqlServer = new SqlServerSoundEx();
+        /// <summary>Oracle Soundex implementation.</summary>
+        public static readonly SoundEx Oracle = new OracleSoundEx();
 
         public abstract string GenerateSoundEx(string s);
 

@@ -2,13 +2,15 @@
 
 namespace ThunderMain.SoundEx.Test
 {
+    /// <summary>
+    /// Validate the SoundEx agorithm
+    /// using http://www.nara.gov/genealogy/soundex/soundex.html
+    /// </summary>
     public class MiracodeTests
     {
         [Fact]
         public void TestMiracode()
         {
-            // Validate the SoundEx agorithm
-            // using http://www.nara.gov/genealogy/soundex/soundex.html
             Assert.Equal("T522", SoundEx.Miracode.GenerateSoundEx("Tymczak"));
             Assert.Equal("A261", SoundEx.Miracode.GenerateSoundEx("Ashcraft"));
             Assert.Equal("P236", SoundEx.Miracode.GenerateSoundEx("Pfister"));

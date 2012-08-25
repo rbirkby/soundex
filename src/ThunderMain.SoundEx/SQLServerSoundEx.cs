@@ -28,11 +28,7 @@ namespace ThunderMain.SoundEx
                 string c = EncodeChar(s[i]);
 
                 // Ignore duplicated chars, except a duplication with the first char
-                if (i == 1)
-                {
-                    output.Append(c);
-                }
-                else if (c != EncodeChar(s[i - 1]))
+                if (i == 1 || c != EncodeChar(s[i - 1]))
                 {
                     output.Append(c);
                 }

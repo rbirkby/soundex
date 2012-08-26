@@ -4,46 +4,42 @@ namespace ThunderMain.SoundEx
 {
     /// <summary>
     /// Oracle soundex implementation.
+    /// http://docs.oracle.com/cd/B19306_01/server.102/b14200/functions148.htm
     /// </summary>
+    /// <remarks>
+    /// Oracle doesn't actually implement the 'h' and 'w' rule, despite what the
+    /// documentation says.
+    /// </remarks>
     internal class OracleSoundEx : SoundEx
     {
         public override string GenerateSoundEx(string s)
         {
-            if (s.Length == 0)
-            {
-                return string.Empty;
-            }
+            if (string.IsNullOrEmpty(s)) return string.Empty;
+
+            int startIndex;
+
+            // Advanced to the first letter character.
+            for (startIndex = 0; startIndex < s.Length && !char.IsLetter(s[startIndex]); startIndex++) {}
+
+            if (startIndex >= s.Length) return string.Empty;
 
             var output = new StringBuilder();
 
-            output.Append(char.ToUpperInvariant(s[0]));
+            output.Append(char.ToUpperInvariant(s[startIndex]));
 
             // Stop at a maximum of 4 characters.
-            for (int i = 1; i < s.Length && output.Length < 4; i++)
+            for (int i = startIndex + 1; i < s.Length && output.Length < 4; i++)
             {
                 string c = EncodeChar(s[i]);
 
-                // Find the preceding character (ignoring h and w).
-                char precedingChar = default(char);
-
-                for (int j = i - 1; j > 0; j--)
-                {
-                    if (char.ToLowerInvariant(s[j]) != 'h' && 
-                        char.ToLowerInvariant(s[j]) != 'w')
-                    {
-                        precedingChar = s[j];
-                        break;
-                    }
-                }
-
-                // Ignore duplicated chars, except a duplication with the first char.
-                if (i == 1 || c != EncodeChar(precedingChar))
+                // Ignore duplicated chars.
+                if (c != EncodeChar(s[i-1]))
                 {
                     output.Append(c);
                 }
             }
 
-            // Pad with zeros
+            // Pad with zeros.
             output.Append(new string('0', 4 - output.Length));
 
             return output.ToString();

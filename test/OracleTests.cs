@@ -18,7 +18,7 @@ namespace ThunderMain.SoundEx.Test
         [Fact]
         public void DuplicatedFirstCharacterIsEncoded()
         {
-            Assert.Equal("L430", SoundEx.Oracle.GenerateSoundEx("Lloyd"));
+            Assert.Equal("L300", SoundEx.Oracle.GenerateSoundEx("Lloyd"));
         }
 
         [Fact]
@@ -28,18 +28,27 @@ namespace ThunderMain.SoundEx.Test
         }
 
         [Fact]
-        public void DuplicatedCharactersSeparatedByHOrWAreIgnored()
+        public void DuplicatedCharactersSeparatedByHOrWAreIncluded()
         {
-            Assert.Equal("X400", SoundEx.Oracle.GenerateSoundEx("XLHL"));
-            Assert.Equal("X400", SoundEx.Oracle.GenerateSoundEx("XLWL"));
-            Assert.Equal("X400", SoundEx.Oracle.GenerateSoundEx("XLWWWWWHHHHL"));
-            Assert.Equal("H400", SoundEx.Oracle.GenerateSoundEx("HLHL"));
+            Assert.Equal("X440", SoundEx.Oracle.GenerateSoundEx("XLHL"));
+            Assert.Equal("X440", SoundEx.Oracle.GenerateSoundEx("XLWL"));
+            Assert.Equal("X440", SoundEx.Oracle.GenerateSoundEx("XLWWWWWHHHHL"));
+            Assert.Equal("H440", SoundEx.Oracle.GenerateSoundEx("HLHL"));
         }
 
         [Fact]
         public void ShortSoundExIsPadded()
         {
             Assert.Equal("S000", SoundEx.Oracle.GenerateSoundEx("S"));
+        }
+
+        [Fact]
+        public void NonLetterCharactersAreIgnored()
+        {
+            Assert.Equal("S130", SoundEx.Oracle.GenerateSoundEx("S=BT"));
+            Assert.Equal("S320", SoundEx.Oracle.GenerateSoundEx("=STS"));
+            Assert.Equal(string.Empty, SoundEx.Oracle.GenerateSoundEx("1234"));
+            Assert.Equal("S000", SoundEx.Oracle.GenerateSoundEx("S1234"));
         }
 
         [Fact]

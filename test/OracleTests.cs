@@ -39,13 +39,13 @@ namespace ThunderMain.SoundEx.Test
         [Fact]
         public void ShortSoundExIsPadded()
         {
-            Assert.Equal("S000", SoundEx.SqlServer.GenerateSoundEx("S"));
+            Assert.Equal("S000", SoundEx.Oracle.GenerateSoundEx("S"));
         }
 
         [Fact]
         public void EmptyInputReturnsZeroLengthSoundEx()
         {
-            Assert.Equal(string.Empty, SoundEx.SqlServer.GenerateSoundEx(string.Empty));
+            Assert.Equal(string.Empty, SoundEx.Oracle.GenerateSoundEx(string.Empty));
         }
     }
 }

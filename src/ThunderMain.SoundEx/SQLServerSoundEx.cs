@@ -9,21 +9,24 @@ namespace ThunderMain.SoundEx
     /// For example, SQL Server will encode "PPPP" as "P100", whereas Miracode will
     /// encode it as "P000".
     /// </summary>
+    /// <remarks>
+    /// This algorithm implements SQL Server 2010 and below. SQL Server 2012
+    /// has a slightly different algorithm:
+    /// http://msdn.microsoft.com/en-us/library/ms187384.aspx
+    /// </remarks>
     internal class SqlServerSoundEx : SoundEx
     {
         public override string GenerateSoundEx(string s)
         {
-            if (s.Length == 0)
-            {
-                return string.Empty;
-            }
+            if (s == null) return null;
+            if (s.Length == 0 || !char.IsLetter(s[0])) return "0000";
 
             var output = new StringBuilder();
 
             output.Append(char.ToUpperInvariant(s[0]));
 
             // Stop at a maximum of 4 characters
-            for (int i = 1; i < s.Length && output.Length < 4; i++)
+            for (int i = 1; i < s.Length && output.Length < 4 && char.IsLetter(s[i]); i++)
             {
                 string c = EncodeChar(s[i]);
 

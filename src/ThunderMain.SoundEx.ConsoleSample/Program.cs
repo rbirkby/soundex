@@ -6,10 +6,10 @@ namespace ThunderMain.SoundEx.ConsoleSample
 {
     static class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             SoundExDictionary util;
-            const string dictionary = "words.zip";
+            string dictionary = args.Length > 0 && args[0] == "/o" ? "OldPend Surnames 2002-01.zip" : "words.zip";
 
             Console.WriteLine("Enter SoundEx Type (M=Miracode, S=Simplified, K=Knuth TAOCP Edition2, T=SQL Server):");
             

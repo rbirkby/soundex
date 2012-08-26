@@ -46,6 +46,9 @@
     <Content Include="words.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="OldPend Surnames 2002-01.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ThunderMain.SoundEx\ThunderMain.SoundEx.csproj">

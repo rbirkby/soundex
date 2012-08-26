@@ -16,7 +16,7 @@ namespace ThunderMain.SoundEx.Test
         }
 
         [Fact]
-        public void DuplicatedFirstCharactersAreEncoded()
+        public void DuplicatedFirstCharacterIsEncoded()
         {
             Assert.Equal("L430", SoundEx.Oracle.GenerateSoundEx("Lloyd"));
         }
@@ -34,6 +34,12 @@ namespace ThunderMain.SoundEx.Test
             Assert.Equal("X400", SoundEx.Oracle.GenerateSoundEx("XLWL"));
             Assert.Equal("X400", SoundEx.Oracle.GenerateSoundEx("XLWWWWWHHHHL"));
             Assert.Equal("H400", SoundEx.Oracle.GenerateSoundEx("HLHL"));
+        }
+
+        [Fact]
+        public void ShortSoundExIsPadded()
+        {
+            Assert.Equal("S000", SoundEx.SqlServer.GenerateSoundEx("S"));
         }
 
         [Fact]

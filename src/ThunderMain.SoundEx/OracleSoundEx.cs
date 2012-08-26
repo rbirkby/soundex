@@ -24,7 +24,7 @@ namespace ThunderMain.SoundEx
                 string c = EncodeChar(s[i]);
 
                 // Find the preceding character (ignoring h and w).
-                char precedingChar = char.MinValue;
+                char precedingChar = default(char);
 
                 for (int j = i - 1; j > 0; j--)
                 {
